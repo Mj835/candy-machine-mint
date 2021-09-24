@@ -1,3 +1,263 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  border-radius: 16px !important;
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+a {
+  font-family: "PressStart2P-Regular", Fallback, sans-serif;
+}
+
+span {
+  font-family: "PressStart2P-Regular", Fallback, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #ffa616;
+  font-family: "PressStart2P-Regular", Fallback, sans-serif;
+}
+
+p {
+  font-family: "PressStart2P-Regular", Fallback, sans-serif;
+  color: whitesmoke;
+}
+
+ul ul,
+ol ul,
+ul ol {
+  margin: 10px 0;
+  padding-left: 0;
+}
+
+.road-detail p {
+  font-family: "PressStart2P-Regular", Fallback, sans-serif;
+  color: whitesmoke;
+  font-size: 0.8rem !important;
+}
+
+.backgroundGradient {
+  background-image: linear-gradient(
+    to right bottom,
+    #b84185,
+    #b93d8e,
+    #b83a97,
+    #b638a2,
+    #b237ad,
+    #af32b6,
+    #aa2dc0,
+    #a42acb,
+    #9e1fd7,
+    #9513e4,
+    #8807f1,
+    #7600ff
+  );
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border-left-color: #ffba00;
+
+  animation: spin 500ms ease infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Header CSS */
+
+.header {
+  position: fixed;
+  width: 100%;
+  padding: 15px 0;
+  z-index: 999;
+  left: 0;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+.header.colorChange {
+  background-color: #2a2e37;
+  box-shadow: 15px 0 40px 0 rgb(0 0 0 / 50%);
+  padding: 15px 0;
+}
+
+.header.headroom--not-top {
+  background-color: #2a2e37;
+  box-shadow: 15px 0 40px 0 rgb(0 0 0 / 50%);
+  padding: 15px 0;
+}
+.container {
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.header-content-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.primary-menu > ul {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.primary-menu-menu > li {
+  display: inline-block;
+  position: relative;
+  padding: 20px;
+  float: left;
+  transition: all 0.3s ease;
+  border-radius: 10px 10px 0 0;
+  background-color: transparent;
+}
+
+.primary-menu-menu > li:hover {
+  background-color: #191a1f;
+}
+
+.primary-menu-menu > li:hover > a .indicator,
+.primary-menu-menu > li:hover .indicator,
+.primary-menu-menu > li:hover > a,
+.primary-menu-menu > li:hover,
+.primary-menu-menu > li.current-menu-item a,
+.primary-menu-menu > li.current-menu-item {
+  color: #ffba00;
+}
+
+.primary-menu-menu > li > a {
+  position: relative;
+  font-size: 16px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  display: inline-block;
+  line-height: 1;
+}
+
+.primary-menu-menu > li:hover > a:before,
+.primary-menu-menu > li.current-menu-item > a:before {
+  opacity: 1;
+  width: 100%;
+}
+
+.primary-menu-menu > li > a:before {
+  content: "";
+  display: block;
+  border-top: 2px solid;
+  position: absolute;
+  left: 50%;
+  width: 0;
+  transform: translateX(-50%);
+  bottom: -12px;
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+
+.primary-menu-menu li .indicator {
+  color: rgba(255, 186, 0, 0.3);
+  font-family: "FontAwesome";
+  font-size: 10px;
+  margin-left: 4px;
+  transition: inherit;
+}
+
+.primary-menu-menu ul.sub-menu,
+.primary-menu-menu ul.sub-menu li ul.sub-menu {
+  position: absolute;
+  z-index: 9999;
+  left: 0;
+  min-width: 270px;
+  top: 100%;
+  background-color: #191a1f;
+  padding: 10px 0 30px;
+  border-radius: 0 10px 10px 10px;
+  box-shadow: 0 20px 80px 0 rgb(0 0 0 / 40%);
+  list-style: none;
+  display: none;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.menu-item-has-children:hover > ul.sub-menu {
+  display: block !important;
+}
+
+.drop-up {
+  animation: drop-up 400ms ease both;
+}
+
+.primary-menu-menu ul.sub-menu li {
+  padding: 10px 20px 10px 40px;
+  position: relative;
+  transition: all 0.4s ease-out;
+}
+
+.primary-menu-menu ul.sub-menu li {
+  clear: both;
+  width: 100%;
+  border: 0 none;
+  position: relative;
+}
+
+.primary-menu-menu ul.sub-menu li a {
+  transition: all 0.4s ease-out;
+  display: block;
+  line-height: 1;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: #c3c9d4;
+  transition: all 0.3s linear;
+  background-color: transparent;
+  font-family: "PressStart2P-Regular", Fallback, sans-serif;
+}
+
+.main-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.medium-padding120 {
+  padding: 120px 0;
+}
+
+.row {
+  margin-right: -20px;
+  margin-left: -20px;
+}
+
+.mint_btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
